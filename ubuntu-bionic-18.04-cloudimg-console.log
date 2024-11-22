@@ -634,3 +634,7 @@ ubuntu-bionic login: [85547.382598] INFO: rcu_sched detected stalls on CPUs/task
 [85547.418382] 	1-...!: (0 ticks this GP) idle=96a/140000000000000/0 softirq=86824/86824 fqs=0 
 [85547.422731] 	(detected by 0, t=779736 jiffies, g=40235, c=40234, q=10)
 [85547.427708] rcu_sched kthread starved for 779736 jiffies! g40235 c40234 f0x2 RCU_GP_WAIT_FQS(3) ->state=0x0 ->cpu=0
+[102733.274649] INFO: rcu_sched self-detected stall on CPU
+[102733.426561] 	0-...!: (1 ticks this GP) idle=79a/1/0 softirq=218054/218054 fqs=0 
+[102733.428319] 	 (t=140901 jiffies g=53582 c=53581 q=51)
+[102733.429760] rcu_sched kthread starved for 140901 jiffies! g53582 c53581 f0x0 RCU_GP_WAIT_FQS(3) ->state=0x402 ->cpu=0
