@@ -28,7 +28,7 @@ $PROJECT_BASE_PATH/env/bin/pip install uwsgi==2.0.26 --break-system-packages
 
 # Run migrations
 cd $PROJECT_BASE_PATH
-$PROJECT_BASE_PATH/env/bin/pip install --upgrade django
+$PROJECT_BASE_PATH/env/bin/pip install "django==2.2*"
 $PROJECT_BASE_PATH/env/bin/python manage.py migrate
 $PROJECT_BASE_PATH/env/bin/python manage.py collectstatic
 
