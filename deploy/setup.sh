@@ -22,13 +22,12 @@ mkdir -p $PROJECT_BASE_PATH/env
 python3 -m venv $PROJECT_BASE_PATH/env
 
 $PROJECT_BASE_PATH/env/bin/pip install -r $PROJECT_BASE_PATH/requirements.txt
-$PROJECT_BASE_PATH/env/bin/pip install --upgrade pip setuptools wheel --break-system-packages
+$PROJECT_BASE_PATH/env/bin/pip install pip setuptools wheel --break-system-packages
 $PROJECT_BASE_PATH/env/bin/pip install uwsgi==2.0.26 --break-system-packages
 
 
 # Run migrations
 cd $PROJECT_BASE_PATH
-$PROJECT_BASE_PATH/env/bin/pip install "django==2.2*"
 $PROJECT_BASE_PATH/env/bin/python manage.py migrate
 $PROJECT_BASE_PATH/env/bin/python manage.py collectstatic
 
