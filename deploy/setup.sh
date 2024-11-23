@@ -28,7 +28,7 @@ $PROJECT_BASE_PATH/env/bin/pip install uwsgi==2.0.26 --break-system-packages
 
 # Run migrations
 cd $PROJECT_BASE_PATH
-chmod +x /scripts/*
+chmod +x /*
 $PROJECT_BASE_PATH/env/bin/python manage.py makemigrations
 $PROJECT_BASE_PATH/env/bin/python manage.py migrate
 $PROJECT_BASE_PATH/env/bin/python manage.py collectstatic
