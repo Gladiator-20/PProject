@@ -22,16 +22,13 @@ mkdir -p $PROJECT_BASE_PATH/env
 python3 -m venv $PROJECT_BASE_PATH/env
 
 $PROJECT_BASE_PATH/env/bin/pip install -r $PROJECT_BASE_PATH/requirements.txt
-$PROJECT_BASE_PATH/env/bin/pip install pip setuptools wheel --break-system-packages
-$PROJECT_BASE_PATH/env/bin/pip install uwsgi==2.0.26 --break-system-packages
+$PROJECT_BASE_PATH/env/bin/pip install uwsgi==2.0.18
 
 
 # Run migrations
 cd $PROJECT_BASE_PATH
-chmod +x /*
-$PROJECT_BASE_PATH/env/bin/python manage.py makemigrations
 $PROJECT_BASE_PATH/env/bin/python manage.py migrate
-$PROJECT_BASE_PATH/env/bin/python manage.py collectstatic
+$PROJECT_BASE_PATH/env/bin/python manage.py collectstatic --noinput
 
 # Setup Supervisor to run our uwsgi process.
 cp $PROJECT_BASE_PATH/deploy/supervisor_profiles_api.conf /etc/supervisor/conf.d/profiles_api.conf
