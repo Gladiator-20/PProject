@@ -1,10 +1,8 @@
 {
-  "version": 2,
   "builds": [
     {
       "src": "profiles_project/wsgi.py",
-      "use": "@vercel/python",
-      "config": {"maxLambdaSize": "15mb", "runtime": "python3.7"}
+      "use": "@vercel/python"
     }
   ],
   "routes": [
@@ -12,5 +10,8 @@
       "src": "/(.*)",
       "dest": "profiles_project/wsgi.py"
     }
-  ]
+  ],
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "profiles_project.settings"
+  }
 }
